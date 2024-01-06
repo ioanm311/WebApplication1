@@ -1,0 +1,48 @@
+﻿@page
+@model WebApplication1.Pages.Auth.SignUpModel
+@{
+    Layout = null;
+}
+<head>
+    <link rel="stylesheet" href="/css/signUp.css">
+</head>
+
+<div class="header-container">
+    <h2 class="signup-title">Sign Up</h2>
+    <img src="/images/logoSignUp.png" alt="Logo" class="signup-logo">
+</div>
+
+<div class="signup-container">
+    <form method="post">
+        <div>
+            <label asp-for="User.FirstName"></label>
+            <input asp-for="User.FirstName" />
+            <span asp-validation-for="User.FirstName"></span>
+        </div>
+        <div>
+            <label asp-for="User.LastName"></label>
+            <input asp-for="User.LastName" />
+            <span asp-validation-for="User.LastName"></span>
+        </div>
+        <div>
+            <label asp-for="User.Email"></label>
+            <input asp-for="User.Email" />
+            <span asp-validation-for="User.Email"></span>
+        </div>
+        <div>
+            <label asp-for="User.Password"></label>
+            <input asp-for="User.Password" type="password" />
+            <span asp-validation-for="User.Password"></span>
+        </div>
+        <div>
+            <label asp-for="User.ConfirmPassword"></label>
+            <input asp-for="User.ConfirmPassword" type="password" />
+            <span asp-validation-for="User.ConfirmPassword"></span>
+        </div>
+        <button type="submit">Sign Up</button>
+    </form>
+    <div class="login-link">
+        Already have an account? <a href="/Auth/Login">Log in</a>
+    </div>
+</div>
+

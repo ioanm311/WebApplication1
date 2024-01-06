@@ -1,0 +1,109 @@
+﻿html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevenim orice scroll orizontal */
+    box-sizing: border-box;
+    height: 100%; /* Forțăm body să aibă înălțimea minimă a viewport-ului */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; /* Asigură că imaginea de fundal acoperă întregul ecran */
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.5); /* Bara de navigație cu transparență */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asigurăm că navbar-ul este deasupra conținutului */
+    justify-content: space-between; /* Așează .nav-links și .auth-buttons la capete opuse */
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30%;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block; /* Asigurăm că padding-ul și alte proprietăți sunt aplicate corect */
+}
+
+    .navbar a:hover {
+        background-color: #705032;
+        border-radius: 5px;
+    }
+
+/* Ajustează padding-ul pentru a compensa înălțimea navbar-ului */
+.content {
+    padding-top: 60px; /* Spațiu pentru navbar */
+    min-height: 100vh; /* Înălțimea minimă a content-ului să fie cel puțin cât viewport-ul */
+}
+
+footer {
+    position: relative; /* Poziționare relativă la body */
+    width: 100%;
+}
+
+.auth-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+    padding-right: 5%;
+}
+
+.navbar button {
+    background-color: transparent; /* Culoare de fundal pentru butoane */
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-left: 10px; /* Distanță între butoane */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .navbar button:hover {
+        background-color: #705032; /* Culoare pentru hover */
+    }

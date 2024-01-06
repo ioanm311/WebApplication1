@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] | Bere Artizanală</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-links">
+            <!-- Link-urile tale aici -->
+            <a href="/">Povestea The Beer Institute</a>
+            <a href="/Shop">Shop</a>
+            <a href="/Abonament">Abonament</a>
+            <a href="/AdventBox">Advent Box</a>
+            <a href="/Contact">Contact</a>
+        </div>
+
+        <div class="auth-buttons">
+            <button onclick="location.href='/Auth/SignUp'">Sign Up</button>
+            <button onclick="location.href='/Auth/Login'">Login</button>
+        </div>
+    </nav>
+
+    <script>
+        // Array cu calea către imaginile de fundal
+        var backgroundImageArray = [
+            '/images/hamei.jpg',
+            '/images/barrels.jpg', 
+            '/images/bottle.jpg', 
+            '/images/malt.jpg', 
+            '/images/table.jpg'  
+        ];
+        var currentIndex = 0;
+
+        // Această funcție va schimba imaginea de fundal la încărcarea paginii
+        function changeBackgroundImage() {
+            document.body.style.backgroundImage = 'url(' + backgroundImageArray[currentIndex] + ')';
+            currentIndex = (currentIndex + 1) % backgroundImageArray.length;
+        }
+
+        // Apelăm funcția o dată pentru a seta prima imagine de fundal
+        changeBackgroundImage();
+
+        // Apoi schimbăm imaginea la fiecare 5 secunde
+        setInterval(changeBackgroundImage, 5000);
+    </script>
+
+    <!-- Conținutul principal al paginii -->
+    <div class="content">
+        @RenderBody()
+    </div>
+
+    <!-- Footer-ul paginii -->
+    <footer>
+        <!-- Codul pentru footer aici -->
+    </footer>
+
+</body>
+</html>
