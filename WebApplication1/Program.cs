@@ -6,8 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Adăugați configurarea DbContext aici
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
-    ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection")))); // Folosiți metoda UseMySql
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); // Folosiți metoda UseSqlServer
 
 // Adăugați serviciile la container
 builder.Services.AddRazorPages();

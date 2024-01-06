@@ -18,7 +18,7 @@ namespace WebApplication1.Pages.Auth
         }
 
         [BindProperty]
-        public NewUserModel User { get; set; }
+        public SignUpViewModel User { get; set; } // Utilizați ViewModel pentru datele de legare
 
         public void OnGet()
         {
@@ -28,31 +28,35 @@ namespace WebApplication1.Pages.Auth
         {
             if (ModelState.IsValid)
             {
-                // Hash the password - aici ar trebui să utilizați o funcție de hashing mai sigură
-                using var hmac = new HMACSHA512();
-                var user = new NewUserModel
+                var user = new NewUserModel // Creați un nou obiect model care va merge în DB
                 {
                     FirstName = User.FirstName,
                     LastName = User.LastName,
                     Email = User.Email,
-                    Password = User.Password
+                    Password = HashPassword(User.Password) // Nu uitați să hash-uiți parola înainte de stocare
                 };
 
-                _context.users.Add(user);
+                _context.users.Add(user); // Asigurați-vă că aveți "Users" ca DbSet în ApplicationDbContext
                 await _context.SaveChangesAsync();
 
                 // Dacă totul este în regulă, redirectează utilizatorul
-                return RedirectToPage("/Index");
+                return RedirectToPage("/Auth/Login");
             }
 
             // Dacă sunt erori, afișează din nou pagina cu mesajele de validare
             return Page();
         }
+
+        private string HashPassword(string password)
+        {
+            // Implementați o metodă de hash aici
+            // Codul de hashing al parolei este omis pentru simplitate
+            return password;
+        }
     }
 
-    public class NewUserModel
+    public class SignUpViewModel // ViewModel pentru pagina de înscriere
     {
-        public int Id { get; set; } // Asigurați-vă că adăugați o coloană corespunzătoare în baza de date
         [Required]
         public string FirstName { get; set; }
 
@@ -71,5 +75,22 @@ namespace WebApplication1.Pages.Auth
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Passwords do not match.")]
         public string ConfirmPassword { get; set; }
+    }
+
+    public class NewUserModel // Modelul care va fi stocat în baza de date
+    {
+        public int Id { get; set; }
+        [Required]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
+
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [Required]
+        public string Password { get; set; }
     }
 }
