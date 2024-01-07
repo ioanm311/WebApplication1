@@ -4,7 +4,7 @@
     Layout = null;
 }
 <head>
-    <link rel="stylesheet" href="/css/signUp.css">
+    <link rel="stylesheet" href="/css/loginSignUp.css">
 </head>
 
 <div class="header-container">
@@ -13,6 +13,9 @@
 </div>
 
 <div class="signup-container">
+    <!-- mesaj de eroare -->
+    <div asp-validation-summary="All" class="text-danger"></div>
+
     <form method="post">
         <div>
             <label asp-for="User.Email"></label>

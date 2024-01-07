@@ -24,27 +24,54 @@ namespace WebApplication1.Pages.Auth
         {
         }
 
+        private string HashPassword(string password, byte[] salt)
+        {
+            using (var hmac = new HMACSHA256(salt))
+            {
+                var hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return Convert.ToBase64String(hash);
+            }
+        }
+
+        private byte[] GenerateSalt()
+        {
+            byte[] salt = new byte[16];
+            using (var random = new RNGCryptoServiceProvider())
+            {
+                random.GetBytes(salt);
+            }
+            return salt;
+        }
+
         public async Task<IActionResult> OnPostAsync()
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                var user = new NewUserModel // Creați un nou obiect model care va merge în DB
-                {
-                    FirstName = User.FirstName,
-                    LastName = User.LastName,
-                    Email = User.Email,
-                    Password = HashPassword(User.Password) // Nu uitați să hash-uiți parola înainte de stocare
-                };
-
-                _context.users.Add(user); // Asigurați-vă că aveți "Users" ca DbSet în ApplicationDbContext
-                await _context.SaveChangesAsync();
-
-                // Dacă totul este în regulă, redirectează utilizatorul
-                return RedirectToPage("/Auth/Login");
+                return Page();
             }
 
-            // Dacă sunt erori, afișează din nou pagina cu mesajele de validare
-            return Page();
+            // Verifică dacă emailul există deja
+            var existingUser = await _context.users.FirstOrDefaultAsync(u => u.Email == User.Email);
+            if (existingUser != null)
+            {
+                ModelState.AddModelError("User.Email", "Email already in use.");
+                return Page();
+            }
+
+            byte[] salt = GenerateSalt();
+            var user = new NewUserModel
+            {
+                FirstName = User.FirstName,
+                LastName = User.LastName,
+                Email = User.Email,
+                Password = HashPassword(User.Password, salt),
+                Salt = Convert.ToBase64String(salt)
+            };
+
+            _context.users.Add(user);
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage("/Auth/Login");
         }
 
         private string HashPassword(string password)
@@ -69,6 +96,8 @@ namespace WebApplication1.Pages.Auth
 
         [Required]
         [DataType(DataType.Password)]
+        [MinLength(8, ErrorMessage = "Password must be at least 8 characters long.")]
+        [RegularExpression("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).*", ErrorMessage = "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.")]
         public string Password { get; set; }
 
         [Required]
@@ -92,5 +121,8 @@ namespace WebApplication1.Pages.Auth
 
         [Required]
         public string Password { get; set; }
+
+        [Required]
+        public string Salt { get; set; } // Noua coloană pentru salt
     }
 }
