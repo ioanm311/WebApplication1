@@ -1,13 +1,23 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using WebApplication1.Data;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace WebApplication1.Pages.Auth
 {
     public class LoginModel : PageModel
     {
+        private readonly ApplicationDbContext _context;
+
+        public LoginModel(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
         [BindProperty]
-        public NewUserModel User { get; set; }
+        public UserLoginModel User { get; set; }
 
         public void OnGet()
         {
@@ -15,17 +25,36 @@ namespace WebApplication1.Pages.Auth
 
         public IActionResult OnPost()
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                // Aici poți adăuga logica pentru salvarea utilizatorului nou
-                // De exemplu, poți salva datele într-o bază de date
-
-                // Dacă totul este în regulă, redirectează utilizatorul
-                return RedirectToPage("/Index");
+                return Page();
             }
 
-            // Dacă sunt erori, afișează din nou pagina cu mesajele de validare
-            return Page();
+            var user = _context.users.FirstOrDefault(u => u.Email == User.Email);
+            if (user == null)
+            {
+                // Utilizatorul nu există
+                ModelState.AddModelError("User.Email", "User does not exist. Please sign up.");
+                return Page();
+            }
+            else if (!VerifyPasswordHash(User.Password, user.Password, user.Salt))
+            {
+                // Parola este greșită
+                ModelState.AddModelError("User.Password", "Invalid credentials.");
+                return Page();
+            }
+
+            return RedirectToPage("/Context/Despre");
+        }
+
+        private bool VerifyPasswordHash(string password, string storedHash, string storedSalt)
+        {
+            byte[] saltBytes = Convert.FromBase64String(storedSalt);
+            using (var hmac = new HMACSHA256(saltBytes))
+            {
+                var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return Convert.ToBase64String(computedHash) == storedHash;
+            }
         }
     }
 
