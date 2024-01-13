@@ -1,0 +1,76 @@
+﻿@page
+@model ShopModel
+@{
+    Layout = "_Layout";
+}
+
+<head>
+    <link rel="stylesheet" href="/css/shopPage.css">
+</head>
+<body>
+    <div class="shop-container">
+        <div class="filter-panel">
+            <h3>Sort by Price</h3>
+            <form method="get">
+                <label for="minPrice">Min Price:</label>
+                <input type="number" id="minPrice" name="minPrice" value="@Model.MinPrice">
+
+                <label for="maxPrice">Max Price:</label>
+                <input type="number" id="maxPrice" name="maxPrice" value="@Model.MaxPrice">
+
+                <label for="searchName">Search by Name:</label>
+                <input type="text" id="searchName" name="searchName" value="@Model.SearchName">
+
+                <select id="productTypeDropdown" name="ProductType">
+                    <option value="">Beer Type</option>
+                    @foreach (var type in Model.ProductTypes)
+                    {
+                        <option value="@type">@type</option>
+                    }
+                </select>
+
+                <button type="submit">Sort</button>
+                <button type="button" onclick="window.location.href='@Url.Page("/Shop")'">Reset Filters</button>
+            </form>
+        </div>
+
+        <div class="card-container">
+            @foreach (var product in Model.Products)
+            {
+                <div class="card">
+                    <img src="@product.Image" alt="@product.Name" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Name</h5>
+                        <p class="card-text">@product.ProductType</p>
+                        <p class="card-text">@product.Description</p>
+                        <p class="card-text">Price: <span id="price-@product.Id">@product.Price.ToString("C")</span></p>
+                        <div>
+                            <label for="quantity-@product.Id">Quantity:</label>
+                            <select id="quantity-@product.Id" name="quantity" onchange="updatePrice(@product.Id, @product.Price)">
+                                @for (int i = 1; i <= 10; i++)
+                                {
+                                    <option value="@i">@i</option>
+                                }
+                            </select>
+                        </div>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            }
+        </div>
+    
+    </div>
+
+    <script>
+    function updatePrice(productId, basePrice) {
+        var quantitySelect = document.getElementById('quantity-' + productId);
+        var quantity = quantitySelect.value;
+        var newPrice = (basePrice * quantity).toFixed(2);
+        var priceElement = document.getElementById('price-' + productId);
+        priceElement.innerText = '$' + newPrice;
+    }
+</script>
+</body>
+
+
+

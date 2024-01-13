@@ -1,0 +1,244 @@
+﻿.card {
+    background-color: #333; /* un gri întunecat care se potrivește cu tema site-ului */
+    color: #f0f0f0; /* o culoare deschisă pentru text */
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* O umbră ușoară pentru a ridica cardul de pe fundal */
+    transition: 0.3s; /* un efect de tranziție pentru hover */
+    width: calc(25% - 32px); /* Ajustează lățimea pentru 4 carduri pe rând, scăzând margin-ul */
+    margin: 16px; /* Spațiu între carduri */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px; /* Margini rotunjite */
+    overflow: hidden; /* Asigură-te că tot conținutul cardului rămâne în interiorul marginilor rotunjite */
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Sau folosește space-between pentru a distribui spațiu uniform */
+    padding: 2rem; /* Acest padding adaugă spațiu în jurul containerului */
+    margin-top: 2rem; /* Acest margin împinge containerul mai jos pe pagina */
+    flex-grow: 1;
+}
+.card .add-to-cart {
+    background-color: #ff9900; /* Buton de adăugare în coș cu o culoare vibrantă */
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.card .add-to-cart:hover {
+    background-color: #e68a00;
+    color: white;
+}
+
+.card .description {
+    font-size: 14px; /* Mici ajustări la dimensiunea fontului pentru descriere */
+    color: #333; /* Culoare mai închisă pentru o citire mai ușoară */
+}
+
+.card img {
+    /* Adaugă margini interioare și ajustează dimensiunea pentru poze */
+    width: calc(100% - 20px); /* micșorează puțin lățimea imaginii pentru a permite marginilor să fie vizibile */
+    margin: 10px; /* adaugă o margine în jurul imaginii */
+    border-radius: 5px; /* margini ușor rotunjite pentru imagine */
+}
+
+.card .price {
+    color: #28a745; /* Schimbă culoarea prețului pentru a atrage atenția */
+    font-weight: bold;
+}
+
+.card .card-body {
+    padding: 10px; /* Reduce spațiul dintre imagine și text */
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* umbra se mărește atunci când mouse-ul este deasupra cardului */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Stabilește o înălțime fixă sau folosește 'auto' pentru înălțimea proprie */
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 16px; /* spațiu în interiorul cardului */
+}
+
+.card-title {
+    font-size: 1.2em; /* o mărime mai mare pentru titlu */
+    margin-bottom: 16px; /* spațiu sub titlu */
+}
+
+.card-text {
+    margin-bottom: 16px; /* spațiu sub text */
+}
+
+.btn {
+    background-color: #666; /* un fundal mai deschis decât cardul pentru buton */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s; /* efect de tranziție pentru buton */
+}
+
+.btn:hover {
+    background-color: #555; /* culoarea butonului se schimbă la hover */
+}
+
+/* Stilizare specifică pentru dropdown-ul de cantitate */
+select {
+    padding: 4px;
+    margin-top: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .card {
+        width: calc(33.333% - 32px); /* 3 carduri pe rând */
+    }
+}
+
+@media (max-width: 992px) {
+    .card {
+        width: calc(50% - 32px); /* 2 carduri pe rând */
+    }
+}
+
+@media (max-width: 768px) {
+    .card img {
+        width: calc(100% - 10px);/* Poze mai mari pe dispozitive mobile */ 
+        margin: 5px;
+    }
+
+    .card .card-body {
+        padding: 5px; /* Mai puțin spațiu pe dispozitive mobile */
+    }
+}
+
+.shop-container {
+    display: flex;
+}
+
+.filter-panel {
+    background-color: #2b2b2b; /* Gri închis pentru fundal */
+    color: #f0f0f0; /* Text deschis pentru a se citi ușor */
+    padding: 1rem;
+    border-right: 1px solid #444; /* Linie subtilă pentru separare */
+    width: 200px; /* Lățimea panoului */
+    border-radius: 8px; /* Margini rotunjite */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Umbră pentru efect de adâncime */
+    margin-bottom: 1rem; /* Distanță față de elementele de mai jos */
+    margin-top: 50px;
+    margin-left: 5px;
+    transition: transform 0.3s ease; /* Adaugă o tranziție pentru efectul de mișcare */
+    height: 450px;
+}
+
+.filter-panel:hover {
+    transform: translateX(20px); /* Mișcă panoul de filtrare la dreapta cu 20px */
+}
+
+.filter-panel h3 {
+    color: #ffcc00; /* O culoare aurie pentru titlul secțiunii de sortare */
+    margin-bottom: 1rem; /* Spațiu sub titlu */
+}
+.filter-panel form {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-panel label {
+    margin-bottom: .5rem;
+    font-size: .9em;
+}
+
+.filter-panel input {
+    background-color: #404040; /* Fundal mai închis pentru input */
+    color: #d0d0d0; /* Culoare deschisă pentru textul din input */
+    border: 1px solid #555; /* Border subtil */
+    border-radius: 4px; /* Margini rotunjite pentru input */
+    padding: .5rem;
+    margin-bottom: 1rem; /* Spațiu între câmpuri */
+}
+
+.filter-panel button {
+    background-color: #ffcc00; /* Buton cu culoare aurie */
+    color: #2b2b2b; /* Text închis pe fundal deschis */
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 4px; /* Margini rotunjite pentru buton */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+.filter-panel button:hover {
+    background-color: #e6b800; /* O nuanță mai închisă la hover */
+}
+
+select#productTypeDropdown {
+    background-color: #ffc107; /* Galben similar cu butoanele 'Sort' și 'Reset Filters' */
+    color: #333; /* Culoarea textului pentru contrast */
+    border: none; /* Înlătură bordura implicită */
+    padding: 0.5rem 1rem; /* Spatiere internă pentru un aspect plăcut */
+    margin-bottom: 1rem; /* Spațiu sub dropdown */
+    width: 100%; /* Lățimea să se potrivească cu celelalte inputuri */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* O mică umbră pentru a se potrivi cu designul */
+    border-radius: 4px; /* Colțuri rotunjite pentru a se potrivi cu stilul butoanelor */
+    appearance: none; /* Înlătură stilul implicit al browser-ului pentru dropdown */
+    -webkit-appearance: none; /* Același lucru, pentru browser-ele bazate pe WebKit */
+    cursor: pointer; /* Cursorul să se schimbe la hover pentru a indica că este clicabil */
+}
+
+/* Stil pentru săgeată dropdown - adaugă o săgeată customizată dacă e necesar */
+select#productTypeDropdown::-ms-expand {
+    display: none; /* Ascunde săgeata în browser-ele care folosesc motorul MS */
+}
+
+/* Adaugă o pseudoclasă pentru a stiliza săgeata dropdown în browser-ele non-MS */
+select#productTypeDropdown::after {
+    content: '\25BC'; /* Unicode pentru săgeată în jos */
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    pointer-events: none; /* Asigură-te că săgeata nu interferează cu clicurile */
+}
+
+/* Asigură-te că inputurile și butoanele sunt aliniate corect */
+.filter-panel input[type="number"],
+.filter-panel input[type="text"],
+.filter-panel select {
+    box-sizing: border-box; /* Acest lucru asigură că padding-ul nu adaugă la lățimea totală */
+}
+
+/* Adaugă stiluri pentru hover și focus pentru a îmbunătăți accesibilitatea */
+select#productTypeDropdown:hover,
+select#productTypeDropdown:focus {
+    background-color: #e0a800; /* O nuanță mai închisă de galben la hover/focus */
+    outline: none; /* Înlătură conturul albastru implicit */
+}
