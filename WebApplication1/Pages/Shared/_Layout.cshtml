@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"] | Bere Artizanală</title>
     <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
@@ -14,11 +15,14 @@
             <a href="/">Povestea The Beer Institute</a>
             <a href="/shop">Shop</a>
             <a href="/Abonament">Abonament</a>
-            <a href="/AdventBox">Advent Box</a>
             <a href="/Contact">Contact</a>
+            <a href="/SpinAndDrink">Spin and Drink</a>
         </div>
 
         <div class="auth-buttons">
+            <a class="btn btn-success" href="/Cart/Index">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
             @if (Context.Session.GetString("UserEmail") != null)
             {
                 <span>Welcome, @Context.Session.GetString("UserEmail")!</span>
