@@ -44,7 +44,9 @@
                         <p class="card-text">@product.ProductType</p>
                         <p class="card-text">@product.Description</p>
                         <p class="card-text">Price: <span id="price-@product.Id">@product.Price.ToString("C")</span></p>
-                        <div>
+
+                        <form method="post" asp-page-handler="AddToCart">
+                            <input type="hidden" name="productId" value="@product.Id" />
                             <label for="quantity-@product.Id">Quantity:</label>
                             <select id="quantity-@product.Id" name="quantity" onchange="updatePrice(@product.Id, @product.Price)">
                                 @for (int i = 1; i <= 10; i++)
@@ -52,8 +54,11 @@
                                     <option value="@i">@i</option>
                                 }
                             </select>
-                        </div>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                            <button type="submit" class="btn btn-primary">
+                                Add to Cart
+                            </button>
+                        </form>
+                       
                     </div>
                 </div>
             }
@@ -61,15 +66,6 @@
     
     </div>
 
-    <script>
-    function updatePrice(productId, basePrice) {
-        var quantitySelect = document.getElementById('quantity-' + productId);
-        var quantity = quantitySelect.value;
-        var newPrice = (basePrice * quantity).toFixed(2);
-        var priceElement = document.getElementById('price-' + productId);
-        priceElement.innerText = '$' + newPrice;
-    }
-</script>
 </body>
 
 

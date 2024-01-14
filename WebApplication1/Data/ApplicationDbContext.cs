@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebApplication1.Pages.Auth;
+using static ShopModel;
 // Alte directive `using` dacă este necesar
 
 namespace WebApplication1.Data
@@ -7,6 +8,8 @@ namespace WebApplication1.Data
     public class ApplicationDbContext : DbContext
     {
         public DbSet<NewUserModel> users { get; set; }
+        public DbSet<Product> products { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCart { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

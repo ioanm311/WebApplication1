@@ -44,7 +44,9 @@ namespace WebApplication1.Pages.Auth
                 return Page();
             }
 
-            return RedirectToPage("/Context/Despre");
+            HttpContext.Session.SetString("UserEmail", user.Email);
+            HttpContext.Session.SetInt32("UserId", user.Id);
+            return RedirectToPage("/Shop");
         }
 
         private bool VerifyPasswordHash(string password, string storedHash, string storedSalt)

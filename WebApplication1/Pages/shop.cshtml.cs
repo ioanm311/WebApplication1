@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
+using System.ComponentModel.DataAnnotations;
 using WebApplication1.Data;
 
 public class ShopModel : PageModel
@@ -15,6 +15,15 @@ public class ShopModel : PageModel
         public decimal Price { get; set; }
         public string ProductType { get; set; }
         // Alte proprietăți necesare
+    }
+    public class ShoppingCartItem
+    {
+        [Key]
+        public int ShoppingCartId { get; set; }
+        public int UserId { get; set; }
+        public string ProductName { get; set; }
+        public int Quantity { get; set; }
+        public decimal Price { get; set; }
     }
 
     [BindProperty(SupportsGet = true)]
@@ -34,6 +43,8 @@ public class ShopModel : PageModel
     public List<Product> Products { get; set; }
     public List<string> ProductTypes { get; set; }
 
+    public bool UserIsLoggedIn { get; set; }
+
     public ShopModel(ApplicationDbContext context)
     {
         _context = context;
@@ -42,6 +53,8 @@ public class ShopModel : PageModel
     public async Task OnGetAsync()
     {
         IQueryable<Product> query = _context.products;
+
+        UserIsLoggedIn = HttpContext.Session.GetString("UserEmail") != null;
 
         ProductTypes = await GetProductTypesAsync();
 
@@ -75,4 +88,33 @@ public class ShopModel : PageModel
                              .Distinct()
                              .ToListAsync();
     }
+
+    public async Task<IActionResult> OnPostAddToCartAsync(int productId,int quantity)
+    {
+        var product = await _context.products.FindAsync(productId);
+        if (product != null)
+        {
+            var userId = HttpContext.Session.GetInt32("UserId");
+
+            if (userId == null)
+            {
+                // Tratează cazul în care ID-ul utilizatorului nu este disponibil
+                return RedirectToPage("/Auth/Login"); // sau o altă manipulare adecvată
+            }
+
+            var shoppingCartItem = new ShoppingCartItem
+            {
+                UserId = userId.Value, // presupunând că ID-ul utilizatorului este stocat ca un claim
+                ProductName = product.Name,
+                Quantity = quantity,
+                Price = product.Price * quantity
+            };
+
+            _context.ShoppingCart.Add(shoppingCartItem);
+            await _context.SaveChangesAsync();
+        }
+
+        return RedirectToPage("/Shop");
+    }
+
 }
