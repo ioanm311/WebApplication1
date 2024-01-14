@@ -1,0 +1,43 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Cart";
+}
+@{
+    Layout = null;
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] | Bere Artizanală</title>
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="/">Povestea The Beer Institute</a>
+            <a href="/Shop">Shop</a>
+            <a href="/Abonament">Abonament</a>
+            <a href="/Contact">Contact</a>
+            <a href="/SpinAndDrink">Spin and Drink</a>
+        </div>
+
+
+
+        <div class="auth-buttons">
+            <a class="btn btn-success" href="/Cart/Index">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+            <button onclick="location.href='/Auth/SignUp'">Sign Up</button>
+            <button onclick="location.href='/Auth/Login'">Login</button>
+        </div>
+    </div>
+
+
+    <h2>MAMAM</h2>
+
+
+</body>
+
