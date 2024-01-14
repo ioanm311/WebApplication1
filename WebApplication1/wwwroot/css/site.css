@@ -68,10 +68,10 @@ body {
     display: inline-block; /* Asigurăm că padding-ul și alte proprietăți sunt aplicate corect */
 }
 
-    .navbar a:hover {
-        background-color: #705032;
-        border-radius: 5px;
-    }
+.navbar a:hover {
+    background-color: #705032;
+    border-radius: 5px;
+}
 
 /* Ajustează padding-ul pentru a compensa înălțimea navbar-ului */
 .content {
@@ -104,6 +104,6 @@ footer {
     transition: background-color 0.3s;
 }
 
-    .navbar button:hover {
-        background-color: #705032; /* Culoare pentru hover */
-    }
+.navbar button:hover {
+    background-color: #705032; /* Culoare pentru hover */
+}
