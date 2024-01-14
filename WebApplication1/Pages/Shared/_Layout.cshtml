@@ -12,15 +12,23 @@
         <div class="nav-links">
             <!-- Link-urile tale aici -->
             <a href="/">Povestea The Beer Institute</a>
-            <a href="/Shop">Shop</a>
+            <a href="/shop">Shop</a>
             <a href="/Abonament">Abonament</a>
             <a href="/AdventBox">Advent Box</a>
             <a href="/Contact">Contact</a>
         </div>
 
         <div class="auth-buttons">
-            <button onclick="location.href='/Auth/SignUp'">Sign Up</button>
-            <button onclick="location.href='/Auth/Login'">Login</button>
+            @if (Context.Session.GetString("UserEmail") != null)
+            {
+                <span>Welcome, @Context.Session.GetString("UserEmail")!</span>
+                <button onclick="location.href='/Logout'">Logout</button>
+            }
+            else
+            {
+                <button onclick="location.href='/Auth/SignUp'">Sign Up</button>
+                <button onclick="location.href='/Auth/Login'">Login</button>
+            }
         </div>
     </nav>
 
