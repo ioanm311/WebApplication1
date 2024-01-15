@@ -27,7 +27,10 @@
             </a>
             @if (Context.Session.GetString("UserEmail") != null)
             {
-                <span>Welcome, @Context.Session.GetString("FirstName")!</span>
+                <div class="welcome-message">
+                        <i class="fas fa-user-circle"></i>
+                    <span>Welcome, @Context.Session.GetString("FirstName")!</span>
+                </div>
                 <button onclick="location.href='/Logout'">Logout</button>
             }
             else

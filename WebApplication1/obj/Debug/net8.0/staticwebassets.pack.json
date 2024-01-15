@@ -69,6 +69,10 @@
       "PackagePath": "staticwebassets\\images\\malt.jpg"
     },
     {
+      "Id": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\images\\shop_background.jpg",
+      "PackagePath": "staticwebassets\\images\\shop_background.jpg"
+    },
+    {
       "Id": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\images\\superba.jpg",
       "PackagePath": "staticwebassets\\images\\superba.jpg"
     },

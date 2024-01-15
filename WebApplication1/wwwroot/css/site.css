@@ -43,7 +43,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #333;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -98,7 +98,7 @@ body {
 }
 /* Ajustează padding-ul pentru a compensa înălțimea navbar-ului */
 .content {
-    padding-top: 60px; /* Spațiu pentru navbar */
+    padding-top: 0px; /* Spațiu pentru navbar */
     min-height: 100vh; /* Înălțimea minimă a content-ului să fie cel puțin cât viewport-ul */
 }
 
@@ -114,3 +114,28 @@ footer {
     margin-left: auto;
     padding-right: 5%;
 }
+
+.welcome-message {
+    color: #ffd700; /* Gold color to match the warmth of a welcome */
+    font-family: 'Merriweather', serif; /* Matches the font specified in your HTML */
+    font-size: 0.8rem; /* Slightly larger than the base size */
+    font-weight: 400; /* Not too bold, keeping it friendly */
+    padding: 0.2rem 0.5rem; /* Comfortable spacing */
+    border-radius: 4px; /* Rounded edges */
+    background-color: rgba(51, 51, 51, 0.8); /* Slightly transparent black */
+    margin-right: 1rem; /* Spacing from the next element */
+    display: inline-flex; /* Keeps the icon and text aligned */
+    align-items: center; /* Centers items vertically */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.welcome-message i {
+    color: #ffffff; /* White color for the icon */
+    margin-right: 0.5rem; /* Space between icon and text */
+}
+
+/* Example for a welcome icon */
+.fas.fa-user-circle {
+    font-size: 1.5rem; /* Slightly larger icon */
+}
+

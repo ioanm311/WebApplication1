@@ -18,7 +18,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around; /* Sau folosește space-between pentru a distribui spațiu uniform */
-    padding: 2rem; /* Acest padding adaugă spațiu în jurul containerului */
+    padding: 1rem; /* Acest padding adaugă spațiu în jurul containerului */
     margin-top: 1rem; /* Acest margin împinge containerul mai jos pe pagina */
     flex-grow: 1;
 }
@@ -141,6 +141,21 @@ select {
 
 .shop-container {
     display: flex;
+    background-image: url('/images/shop_background.jpg'); /* Aici trebuie să pui calea actuală către imaginea ta */
+    background-size: cover; /* Asigură-te că imaginea acoperă întregul container */
+    background-position: center; /* Centrează imaginea de fundal */
+    background-repeat: no-repeat; /* Imaginea nu se va repeta */
+}
+.shop-container::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Overlay negru semi-transparent */
+    z-index: -1; /* Asigură-te că overlay-ul este în spatele conținutului */
 }
 
 .filter-panel {
@@ -152,7 +167,7 @@ select {
     border-radius: 8px; /* Margini rotunjite */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Umbră pentru efect de adâncime */
     margin-bottom: 1rem; /* Distanță față de elementele de mai jos */
-    margin-top: 50px;
+    margin-top: 25px;
     margin-left: 5px;
     transition: transform 0.3s ease; /* Adaugă o tranziție pentru efectul de mișcare */
     height: 450px;

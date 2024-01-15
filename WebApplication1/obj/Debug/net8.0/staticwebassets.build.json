@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "475sih7eHUXAfrSc19CPw49DQS6t+dBKQVJ0bMY+9kA=",
+  "Hash": "WgrjJz+KnK+0nrXHD1m7UtxehkRyfDsOVpP609mx3V0=",
   "Source": "WebApplication1",
   "BasePath": "_content/WebApplication1",
   "Mode": "Default",
@@ -338,6 +338,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\malt.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\images\\shop_background.jpg",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "images/shop_background.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\shop_background.jpg"
     },
     {
       "Identity": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\images\\STYLES-OF-BEER.png",
