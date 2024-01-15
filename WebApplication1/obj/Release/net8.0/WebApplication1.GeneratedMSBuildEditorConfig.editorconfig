@@ -26,6 +26,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/orang/source/repos/BeerApp/WebApplication1/Pages/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/orang/source/repos/BeerApp/WebApplication1/Pages/Despre.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVzcHJlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/orang/source/repos/BeerApp/WebApplication1/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/orang/source/repos/BeerApp/WebApplication1/Pages/shop.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcc2hvcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/orang/source/repos/BeerApp/WebApplication1/Pages/SpinAndDrink/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3BpbkFuZERyaW5rXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/orang/source/repos/BeerApp/WebApplication1/Pages/_ViewImports.cshtml]

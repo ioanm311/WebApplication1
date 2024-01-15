@@ -19,7 +19,7 @@
     flex-wrap: wrap;
     justify-content: space-around; /* Sau folosește space-between pentru a distribui spațiu uniform */
     padding: 2rem; /* Acest padding adaugă spațiu în jurul containerului */
-    margin-top: 2rem; /* Acest margin împinge containerul mai jos pe pagina */
+    margin-top: 1rem; /* Acest margin împinge containerul mai jos pe pagina */
     flex-grow: 1;
 }
 .card .add-to-cart {

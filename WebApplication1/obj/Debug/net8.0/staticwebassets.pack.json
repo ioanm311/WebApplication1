@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\WebApplication1.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\css\\cart.css",
+      "PackagePath": "staticwebassets\\css\\cart.css"
+    },
+    {
+      "Id": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\css\\despre.css",
+      "PackagePath": "staticwebassets\\css\\despre.css"
+    },
+    {
       "Id": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\css\\loginSignUp.css",
       "PackagePath": "staticwebassets\\css\\loginSignUp.css"
     },
@@ -17,8 +25,24 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\css\\wheel.css",
+      "PackagePath": "staticwebassets\\css\\wheel.css"
+    },
+    {
       "Id": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\images\\From Brew to You 2019.png",
+      "PackagePath": "staticwebassets\\images\\From Brew to You 2019.png"
+    },
+    {
+      "Id": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\images\\STYLES-OF-BEER.png",
+      "PackagePath": "staticwebassets\\images\\STYLES-OF-BEER.png"
+    },
+    {
+      "Id": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\images\\backgr_cart.jpg",
+      "PackagePath": "staticwebassets\\images\\backgr_cart.jpg"
     },
     {
       "Id": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\images\\barrels.jpg",

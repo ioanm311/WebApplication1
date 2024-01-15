@@ -1,0 +1,128 @@
+﻿/* Resetare stiluri de bază */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stiluri specifice pentru pagina "Despre" */
+
+/* Stiluri specifice pentru pagina "Despre" */
+.despre-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Asigură că cel puțin înălțimea întregului ecran este acoperită */
+    background: url('/images/STYLES-OF-BEER.png') no-repeat right center; /* Shift the background image to the right */
+    background-size: contain; /* Schimbă pentru a se asigura că întreaga imagine este vizibilă */
+    background-attachment: fixed; /* Menține background-ul fix */
+    display: flex;
+    align-items: flex-start; /* Ajustează alinierea verticală în partea de sus */
+    justify-content: flex-start; /* Alinierea conținutului la stânga */
+    color: white; /* Culoarea textului */
+    padding-top: 10vh; /* Adaugă un spațiu în partea de sus pentru a împinge conținutul în jos */
+}
+
+/* ... restul codului CSS rămâne neschimbat ... */
+body {
+    background-color: #f0ebe6; /* Aceasta este o nuanță întunecată de albastru care se apropie de negru */
+}
+
+body, html {
+    height: 100%; /* Asigură că înălțimea body și html este 100% */
+    margin: 0; /* Elimină marginile implicite */
+}
+
+.despre-content {
+    text-align: left; /* Alinierea textului la stânga */
+    width: 50%; /* Lățimea blocului de text */
+    margin-left: 2%; /* Spațiu de la marginea stângă */
+    padding: 20px; /* Padding pentru a nu atinge marginea containerului */
+    padding-top: 1vh; /* Additional top padding to push the text down */
+    margin-bottom: 50px;
+    color: #5A3921; /* culoarea textului alb */
+    font-family: 'Merriweather', serif;
+}
+
+    /* Asigură lizibilitatea textului */
+.despre-content h1,
+.despre-content p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Umbră pentru a îmbunătăți contrastul */
+}
+
+/* Stiluri pentru navbar-ul transparent pe pagina "Despre" */
+.navbar {
+    background-color: transparent;
+}
+
+@media screen and (max-width: 768px) {
+    .despre-content {
+        width: 95%; /* Ajustează pentru ecrane mai mici */
+        margin-left: 2.5%; /* Ajustează spațiul de la marginea stângă */
+    }
+}
+/* Stiluri pentru navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Gruparea elementelor de navigație */
+.navbar .nav-group {
+    display: flex;
+    align-items: center;
+}
+
+/* Stiluri uniforme pentru butoane și linkuri */
+.navbar button, .navbar a {
+    text-decoration: none;
+    color: white;
+    background-color: #444; /* Culoare de fundal pentru butoane */
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+        /* Stiluri pentru hover */
+.navbar button:hover, .navbar a:hover {
+    background-color: #555;
+}
+
+/* Separarea butoanelor 'Sign Up' și 'Login' */
+.navbar .nav-group.right {
+    margin-left: auto;
+}
+
+/* Media queries pentru ecrane mai mici */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        .navbar .nav-group {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .navbar button, .navbar a {
+            width: 100%;
+            margin: 5px 0; /* Adaugă spațiu între butoane pe ecrane mici */
+        }
+}
+
+.despre-content img {
+    max-width: 100%; /* Asigură-te că imaginea se încadrează în container */
+    height: auto; /* Menține proporția imaginii */
+    display: block; /* Centrează imaginea dacă este necesar */
+    margin: 20px auto; /* Adaugă spațiu în jurul imaginii */
+}

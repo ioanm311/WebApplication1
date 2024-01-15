@@ -37,42 +37,65 @@ body {
     background-size: cover; /* Asigură că imaginea de fundal acoperă întregul ecran */
 }
 
+/* Stiluri pentru navbar */
 .navbar {
-    background: rgba(0, 0, 0, 0.5); /* Bara de navigație cu transparență */
-    color: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    position: fixed;
+    background-color: #333;
+    padding: 0.5rem 1rem;
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /* Asigurăm că navbar-ul este deasupra conținutului */
-    justify-content: space-between; /* Așează .nav-links și .auth-buttons la capete opuse */
+    z-index: 1000;
 }
 
-.nav-links {
+/* Gruparea elementelor de navigație */
+.navbar .nav-group {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding-left: 30%;
 }
 
-.navbar a {
-    color: white;
+/* Stiluri uniforme pentru butoane și linkuri */
+.navbar button, .navbar a {
     text-decoration: none;
-    padding: 8px 16px;
-    font-size: 18px;
-    font-weight: bold;
-    display: inline-block; /* Asigurăm că padding-ul și alte proprietăți sunt aplicate corect */
+    color: white;
+    background-color: #444; /* Culoare de fundal pentru butoane */
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
-.navbar a:hover {
-    background-color: #705032;
-    border-radius: 5px;
+/* Stiluri pentru hover */
+.navbar button:hover, .navbar a:hover {
+    background-color: #555;
 }
 
+/* Separarea butoanelor 'Sign Up' și 'Login' */
+.navbar .nav-group.right {
+    margin-left: auto;
+}
+
+/* Media queries pentru ecrane mai mici */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .nav-group {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .navbar button, .navbar a {
+        width: 100%;
+        margin: 5px 0; /* Adaugă spațiu între butoane pe ecrane mici */
+    }
+}
 /* Ajustează padding-ul pentru a compensa înălțimea navbar-ului */
 .content {
     padding-top: 60px; /* Spațiu pentru navbar */
@@ -90,20 +113,4 @@ footer {
     align-items: center;
     margin-left: auto;
     padding-right: 5%;
-}
-
-.navbar button {
-    background-color: transparent; /* Culoare de fundal pentru butoane */
-    color: white;
-    border: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px 20px;
-    margin-left: 10px; /* Distanță între butoane */
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.navbar button:hover {
-    background-color: #705032; /* Culoare pentru hover */
 }
