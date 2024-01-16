@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\WebApplication1.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\css\\bere.css",
+      "PackagePath": "staticwebassets\\css\\bere.css"
+    },
+    {
       "Id": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\css\\cart.css",
       "PackagePath": "staticwebassets\\css\\cart.css"
     },
@@ -51,6 +55,10 @@
     {
       "Id": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\images\\barrels.jpg",
       "PackagePath": "staticwebassets\\images\\barrels.jpg"
+    },
+    {
+      "Id": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\images\\beer-mug-chips-with-copy-space.jpg",
+      "PackagePath": "staticwebassets\\images\\beer-mug-chips-with-copy-space.jpg"
     },
     {
       "Id": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\images\\bere1.jpg",

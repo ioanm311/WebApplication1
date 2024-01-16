@@ -47,7 +47,7 @@ app.UseEndpoints(endpoints =>
     endpoints.MapRazorPages();
     endpoints.MapGet("/", async context =>
     {
-        context.Response.Redirect("/Despre");
+        context.Response.Redirect("/Bere/Index");
     });
 });
 app.Run();

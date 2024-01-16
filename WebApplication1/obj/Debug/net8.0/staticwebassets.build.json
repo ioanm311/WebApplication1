@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "L65f9Jiwj16tjMYYZRhW3gWYgk+hnRRguuKCo2CpC/U=",
+  "Hash": "vpzmflaGOdol4i7R5D61/qB93bIPZHlZKv/SH0n8t9Y=",
   "Source": "WebApplication1",
   "BasePath": "_content/WebApplication1",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebApplication1.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\css\\bere.css",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "css/bere.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bere.css"
     },
     {
       "Identity": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\css\\cart.css",
@@ -243,6 +262,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\barrels.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\images\\beer-mug-chips-with-copy-space.jpg",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "images/beer-mug-chips-with-copy-space.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\beer-mug-chips-with-copy-space.jpg"
     },
     {
       "Identity": "C:\\Users\\orang\\source\\repos\\BeerApp\\WebApplication1\\wwwroot\\images\\bere1.jpg",
