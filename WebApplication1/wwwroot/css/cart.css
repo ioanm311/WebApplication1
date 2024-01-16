@@ -1,0 +1,213 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/backgr_cart.jpg'); /* Înlocuiește cu calea spre imaginea generată */
+    background-size: cover; /* Asigură-te că imaginea acoperă întregul ecran */
+    background-position: center; /* Centrează imaginea în pagina */
+    background-attachment: fixed; /* Imaginea de fundal va rămâne fixă la defilarea paginii */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Overlay semi-transparent negru */
+    z-index: -1; /* Asigură-te că overlay-ul este în spatele conținutului */
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px 20px; /* Adăugat mai mult spațiu în partea de sus */
+    background-size: cover;
+    background-position: center;
+}
+
+.card {
+    border: 1px solid #c59a6c; /* O culoare care aduce aminte de butoaie de lemn */
+    background-color: rgba(246, 244, 240, 0.9); /* Fundal translucid pentru a vedea imaginea de fundal */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    width: 80%;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.2); /* O umbră mai pronunțată */
+    position: relative;
+    backdrop-filter: blur(4px);
+}
+
+.card h3.product-name {
+    font-family: 'Roboto Slab', serif; /* Font rustic */
+    font-weight: bold;
+    color: #7b4b2a; /* Culoare mai închisă pentru a contrasta cu fundalul */
+    margin-bottom: 0.5rem; /* Spațiere adăugată sub titlu */
+}
+
+.card p {
+    color: #504a3e; /* O nuanță mai închisă pentru text */
+    font-family: 'Roboto Slab', serif;
+    font-size: 1em;
+    margin-bottom: 0.5rem; /* Spațiere adăugată pentru o citire mai ușoară */
+}
+
+.delete-form {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.delete-btn {
+    background-color: #ad6b33; /* Culoare inspirată din nuanțele berii artizanale */
+    color: #fff;
+    padding: .6rem 1.2rem;
+    border: none;
+    border-radius: 5px; /* Margini ușor rotunjite pentru buton */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Roboto Slab', serif; /* Același font ca restul elementelor */
+    font-weight: 700; /* Font mai gros */
+    text-transform: uppercase; /* Textul butonului în majuscule pentru a ieși în evidență */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); / Umbra pentru buton */
+}
+
+.delete-btn:hover {
+    background-color: #935a20; /* O culoare mai închisă la hover */
+    box-shadow: 0px 0px 8px rgba(255,255,255,0.5); /* O umbră externă pentru efect la hover */
+}
+
+.checkout-container {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Adaugă un fundal semi-transparent pentru a crește contrastul */
+    border-radius: 10px; /* Margini rotunjite */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* O umbră ușoară pentru definire */
+    text-align: center;
+    position: relative; /* Pentru a fixa poziția relativ la pagina de fundal */
+}
+
+.total-price {
+    margin-bottom: 1rem;
+}
+
+.total-price h3 {
+    font-family: 'Roboto Slab', serif;
+    color: #7b4b2a;
+    background: rgba(0, 0, 0, 0.1); /* Un mic overlay pentru a ajuta la separarea textului de fundal */
+    display: inline-block; /* Pentru a limita fundalul la text */
+    padding: 5px 10px; /* Spațiere internă */
+    border-radius: 5px; /* Margini rotunjite */
+}
+
+.discount-code {
+    margin-bottom: 1rem;
+}
+
+.discount-code label {
+    margin-right: 0.5rem;
+    font-family: 'Roboto Slab', serif;
+    color: #504a3e;
+}
+
+.discount-code label, .discount-code input[type="text"] {
+    font-family: 'Roboto Slab', serif;
+    color: #504a3e; /* Ajustează culoarea textului pentru a fi în ton cu tema */
+}
+
+.discount-code input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid #d3c295; /* O culoare inspirată de bere pentru bordură */
+    background: rgba(255, 255, 255, 0.7); /* Semi-transparent pentru a vedea fundalul dar și pentru a citi ușor textul */
+    border-radius: 4px;
+    width: 50%; /* Setează o lățime fixă pentru câmp */
+    margin: 0 auto; /* Centrare */
+}
+
+.checkout-button form {
+    margin-top: 1rem;
+}
+
+.checkout-button button {
+    background-color: #ad6b33; /* O culoare care să amintească de bere */
+    color: white;
+    padding: 1rem 2rem;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 50%; /* Setează o lățime fixă pentru buton */
+    display: block; /* Afișează ca un bloc */
+    margin: 20px auto; /* Centrare și spațiu în jur */
+}
+
+.checkout-button button:hover {
+    background-color: #935a20; /* Un efect de hover mai închis */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* O mică strălucire la hover */
+}
+
+.empty-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px; /* sau orice înălțime dorești */
+    border: 1px dashed #d3c295; /* o culoare care aduce aminte de bere */
+    background-color: #f6f4f0; /* un fundal deschis, natural */
+    border-radius: 10px;
+    margin: 10px 0;
+    width: 80%;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.empty-cart-message {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.5em; /* Mărește dimensiunea fontului pentru a fi mai vizibil */
+    color: #8a5a44; /* o culoare care aduce aminte de malț */
+    text-align: center; /* Asigură-te că textul este centrat */
+}
+
+/* Stil pentru butonul de aplicare a reducerii */
+button.apply-discount {
+    background-color: #ad6b33; /* O culoare care se potrivește cu schema de culori a butonului Checkout */
+    color: white; /* Text alb pentru contrast */
+    border: none; /* Fără bordură */
+    padding: 10px 20px; /* Spatiu interior pentru a face butonul mai mare */
+    font-weight: bold; /* Font mai îndrăzneț */
+    border-radius: 5px; /* Margini rotunjite */
+    cursor: pointer; /* Cursorul să arate ca un pointer când trece peste buton */
+    transition: background-color 0.3s ease; /* O tranziție suavă pentru efect de hover */
+}
+
+button.apply-discount:hover {
+    background-color: #a67c52; /* O culoare mai întunecată la hover */
+}
+
+.empty-cart-message {
+    text-align: center;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 40px;
+    border-radius: 4px;
+    margin-top: 50px;
+    color: #495057;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.empty-cart-message h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.empty-cart-message p {
+    font-size: 18px;
+    line-height: 1.6;
+}

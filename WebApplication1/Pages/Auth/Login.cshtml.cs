@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using WebApplication1.Data;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.AspNetCore.Http;
 
 namespace WebApplication1.Pages.Auth
 {
@@ -46,6 +47,7 @@ namespace WebApplication1.Pages.Auth
 
             HttpContext.Session.SetString("UserEmail", user.Email);
             HttpContext.Session.SetInt32("UserId", user.Id);
+            HttpContext.Session.SetString("FirstName", user.FirstName);
             return RedirectToPage("/Shop");
         }
 
