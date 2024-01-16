@@ -31,6 +31,13 @@
                 </div>
             }
         }
+        else
+        {
+            <div class="empty-cart-message">
+                <h2>Cosul este gol</h2>
+                <p>Vizitați magazinul nostru pentru a adăuga produse.</p>
+            </div>
+        }
     </div>
 
     @if (Model.ShoppingCartItems.Any())
@@ -47,14 +54,24 @@
             </div>
         </form>
         <div class="checkout-button">
-            <form method="post" action="/path-to-checkout">
-                <!-- Înlocuiește cu calea corectă -->
-                @Html.AntiForgeryToken()
-                <button type="submit">Checkout</button>
-            </form>
+                <form method="post" asp-page-handler="PlaceOrder">
+                    @Html.AntiForgeryToken()
+                    <button type="submit">Plaseaza comanda</button>
+                </form>
         </div>
         </div>
     }
+
+
+    @if (!string.IsNullOrEmpty(Model.SuccessMessage))
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("@Model.SuccessMessage");
+            };
+        </script>
+    }
+
     @if (!string.IsNullOrEmpty(Model.ErrorMessage))
     {
         <script type="text/javascript">

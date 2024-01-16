@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-    margin-top:100px; /* înălțimea navbar-ului */; /* Ajustează această valoare în funcție de înălțimea navbar-ului tău */
+    margin-top:100px; /* înălțimea navbar-ului */ 
     position: relative;
     width: 400px;
     height: 400px;

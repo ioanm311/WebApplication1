@@ -67,7 +67,7 @@
                 segmentIndex = (segments.length - segmentIndex) % segments.length; // Ajustăm indexul pentru ordinea segmentelor
 
                 let selectedSegment = segments[segmentIndex]; // Identificăm segmentul câștigător
-
+                sendSpinResult(selectedSegment);
                 // Afișăm rezultatul corespunzător
                 if (selectedSegment === 'Lose') {
                     discountCode.textContent = 'You lost!';
@@ -82,5 +82,29 @@
                 wheel.classList.remove('spinning'); // Îndepărtăm clasa pentru a permite rotații ulterioare
             }
         });
+        @Html.AntiForgeryToken()
+        function sendSpinResult(result) {
+            console.log('Sending result:', result);
+
+            fetch('/SpinAndDrink/Index?handler=SaveSpinResult', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain'
+                },
+                body: result
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok: ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Success:', data); // Loghează răspunsul de succes
+            })
+            .catch((error) => {
+                console.error('Error during fetch:', error); // Loghează orice eroare care apare în timpul fetch
+            });
+        }
     </script>
 </body>

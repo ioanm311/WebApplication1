@@ -188,3 +188,26 @@ button.apply-discount {
 button.apply-discount:hover {
     background-color: #a67c52; /* O culoare mai întunecată la hover */
 }
+
+.empty-cart-message {
+    text-align: center;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 40px;
+    border-radius: 4px;
+    margin-top: 50px;
+    color: #495057;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.empty-cart-message h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.empty-cart-message p {
+    font-size: 18px;
+    line-height: 1.6;
+}
