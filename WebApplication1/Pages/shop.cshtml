@@ -58,14 +58,21 @@
                                 Add to Cart
                             </button>
                         </form>
-                       
                     </div>
                 </div>
             }
         </div>
     
     </div>
-
+    <script>
+        function updatePrice(productId, basePrice) {
+            var quantitySelect = document.getElementById('quantity-' + productId);
+            var quantity = quantitySelect.value;
+            var newPrice = (basePrice * quantity).toFixed(2);
+            var priceElement = document.getElementById('price-' + productId);
+            priceElement.innerText = '$' + newPrice;
+        }
+    </script>
 </body>
 
 

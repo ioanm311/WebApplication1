@@ -1,0 +1,87 @@
+﻿
+.overlay {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center; /* Aliniază elementele flex vertical */
+    justify-content: center; /* Aliniază elementele flex orizontal */
+    flex-direction: column; /* Direcția flex este coloană pentru a aranja elementele vertical */
+    height: 100vh; /* Înălțimea viewport-ului pentru a întinde pe tot ecranul */
+    pointer-events: none;
+    background-image: url('/images/beer-mug-chips-with-copy-space.jpg'); /* înlocuiește cu calea corectă a imaginii */
+    background-size: cover; /* asigură-te că imaginea acoperă întregul div */
+    background-position: center; /* centrează imaginea în div */
+    background-repeat: no-repeat; /* previne repetarea imaginii */
+}
+
+.text {
+    pointer-events: auto;
+    margin-top: -20%;
+    text-align: center;
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+
+/* Stilizarea textului și butonului */
+.overlay .text h1 {
+    font-size: 4rem; /* Mărimea titlului */
+    color: #ffffff; /* Culoarea titlului */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Umbra textului pentru a-l face mai lizibil pe fundalul divers */
+    margin-bottom: 0.5em; /* Spațiu între titlu și paragraf */
+    font-weight: bold; /* Face textul mai gros */
+}
+
+.overlay .text p {
+    font-size: 1.1rem; /* Mărimea paragrafului */
+    color: #ffffff; /* Culoarea paragrafului */
+    max-width: 600px; /* Lățimea maximă a paragrafului pentru a controla lungimea liniilor */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 2.5em;
+}
+
+.overlay .button {
+    font-family: 'Playfair Display', serif;
+    background-color: #e0a80d;
+    color: #ffffff;
+    padding: 15px 30px;
+    font-size: 1.75rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    transition: background-color 0.3s, transform 0.3s;
+    color: white; /* Setează culoarea textului la alb */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adaugă o umbră neagră pentru lizibilitate */
+    /* Restul stilurilor pentru buton */
+    cursor: pointer;
+    background-image: url('/images/superba.jpg'); /* înlocuiește cu calea corectă a imaginii */
+    background-size: cover; /* asigură-te că imaginea acoperă întregul div */
+    background-position: center; /* centrează imaginea în div */
+    background-repeat: no-repeat; /* previne repetarea imaginii */
+}
+
+.overlay .button:hover {
+    background-color: #c8960c;
+    transform: scale(1.05);
+}
+
+.text, .button {
+    font-family: 'Lora', serif;
+}
+
+.text p {
+    font-family: 'Lora', serif;
+    margin-top: -1em; /* Ajustează după preferințe pentru a aduce mai aproape de h1 */
+}
+
+.button {
+    font-family: 'Muli', sans-serif;
+}

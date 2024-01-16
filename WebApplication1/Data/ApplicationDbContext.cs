@@ -10,6 +10,7 @@ namespace WebApplication1.Data
         public DbSet<NewUserModel> users { get; set; }
         public DbSet<Product> products { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCart { get; set; }
+        public DbSet<SpinResultType> SpinResults { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

@@ -11,12 +11,19 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Adăugați serviciile la container
 builder.Services.AddRazorPages();
 
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.PropertyNamingPolicy = null;
+});
+
+
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30); // Sesiunea expiră după 30 de minute de inactivitate
     // Setează alte opțiuni dacă este necesar
 });
-
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 var app = builder.Build();
 
 // Configurează pipeline-ul pentru cererile HTTP
@@ -34,5 +41,13 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
-
+app.MapControllers(); // Adaugă acesta pentru a mapea rutele controller-elor\
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapRazorPages();
+    endpoints.MapGet("/", async context =>
+    {
+        context.Response.Redirect("/Bere/Index");
+    });
+});
 app.Run();
