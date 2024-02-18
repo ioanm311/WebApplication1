@@ -37,7 +37,7 @@ namespace WebApplication1.Pages.Cart
                                 Quantity = cartItem.Quantity,
                                 Price = cartItem.Price
                             }).ToList();
-                TotalPrice = ShoppingCartItems.Sum(item => item.Price * item.Quantity);
+                TotalPrice = ShoppingCartItems.Sum(item => item.Price);
                 return Page();
             }
             else
@@ -89,11 +89,14 @@ namespace WebApplication1.Pages.Cart
                     case "B15":
                         TotalPrice *= 0.85m; // Reducere de 15%
                         break;
+                    case "B20":
+                        TotalPrice *= 0.80m; // Reducere de 20%
+                        break;
                     case "B25":
-                        TotalPrice *= 0.80m; // Reducere de 15%
+                        TotalPrice *= 0.75m; // Reducere de 25%
                         break;
                     case "B35":
-                        TotalPrice *= 0.75m; // Reducere de 15%
+                        TotalPrice *= 0.65m; // Reducere de 35%
                         break;
                     default:
                         ErrorMessage = "Cod invalid";

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewData["Title"] | Bere Artizanală</title>
+    <title>@ViewData["Title"] | Craft Beer</title>
     <link rel="stylesheet" href="~/css/site.css">
     <link rel="stylesheet" href="~/css/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
         <div class="nav-group left">
             <!-- Link-urile tale aici -->
             <a href="/Bere/Index">Home</a>
-            <a href="/Despre">Povestea The Beer Institute</a>
+            <a href="/Despre">The Beer Institute</a>
             <a href="/Shop">Shop</a>
             <a href="/SpinAndDrink/Index">Spin and Drink</a>
         </div>
@@ -29,10 +29,10 @@
             </a>
             @if (Context.Session.GetString("UserEmail") != null)
             {
-                <div class="welcome-message">
-                        <i class="fas fa-user-circle"></i>
-                    <span>Welcome, @Context.Session.GetString("FirstName")!</span>
-                </div>
+                <button onclick="location.href='/Profile/Update'">
+                    <i class="fas fa-user-circle"></i>
+                    Welcome, @Context.Session.GetString("FirstName")!
+                </button>
                 <button onclick="location.href='/Logout'">Logout</button>
             }
             else

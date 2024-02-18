@@ -3,7 +3,7 @@
     ViewData["Title"] = "Spin and Drink";
 }
 @{
-    Layout = "_Layout";
+    Layout = null;
 }
 <head>
     <link rel="stylesheet" href="/css/wheel.css">
@@ -38,6 +38,9 @@
         </div>
     </div>
     <div id="discountCode">Cod: </div>
+    <div id="backToHomeButtonContainer">
+        <a href="/Bere/Index" class="backToHomeButton">Back to Home</a>
+    </div>
     <script>
         let wheel = document.querySelector('.wheel');
         let spinBtn = document.querySelector('.spinBtn');

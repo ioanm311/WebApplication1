@@ -19,13 +19,13 @@
             {
                 <div class="card">
                     <h3 class="product-name">@item.ProductName</h3>
-                    <p class="quantity">Cantitate: @item.Quantity</p>
-                    <p class="price">Preț: @item.Price</p>
+                    <p class="quantity">Quantity: @item.Quantity</p>
+                    <p class="price">Price: @item.Price</p>
                     <form method="post" class="delete-form">
                         @Html.AntiForgeryToken()
                         <input type="hidden" name="itemId" value="@item.ShoppingCartId" />
                         <button type="submit" asp-page-handler="StergereItem" class="delete-btn">
-                            Ștergere Item
+                            Delete Item
                         </button>
                     </form> 
                 </div>
@@ -34,8 +34,8 @@
         else
         {
             <div class="empty-cart-message">
-                <h2>Cosul este gol</h2>
-                <p>Vizitați magazinul nostru pentru a adăuga produse.</p>
+                <h2>Cart is empty</h2>
+                <p>Visit our shop to add products.</p>
             </div>
         }
     </div>
@@ -48,15 +48,15 @@
         </div>
         <form method="post" asp-page-handler="ApplyDiscount">
             <div class="discount-code">
-                <label for="discount">Cod reducere:</label>
+                <label for="discount">Discount code:</label>
                 <input type="text" id="discount" name="discountCode">
-                    <button type="submit" asp-page-handler="ApplyDiscount" class="apply-discount">Aplică Reducerea</button>
+                    <button type="submit" asp-page-handler="ApplyDiscount" class="apply-discount">Apply Discount</button>
             </div>
         </form>
         <div class="checkout-button">
                 <form method="post" asp-page-handler="PlaceOrder">
                     @Html.AntiForgeryToken()
-                    <button type="submit">Plaseaza comanda</button>
+                    <button type="submit">Place Order</button>
                 </form>
         </div>
         </div>
